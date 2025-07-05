@@ -14,5 +14,4 @@ yarn-error.log*
 .env.local
 
 # Generated files
-cheaters.json
 /extension/cf-cheater-highlighter.zip
