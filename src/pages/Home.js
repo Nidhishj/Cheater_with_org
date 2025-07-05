@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, VStack, Heading, Text, Button, Container, SimpleGrid, Icon, Flex } from '@chakra-ui/react';
-import { FaSearch, FaFlag, FaShieldAlt, FaBuilding } from 'react-icons/fa';
+import { Box, VStack, Heading, Text, Button, Container, SimpleGrid, Icon } from '@chakra-ui/react';
+import { FaSearch, FaBuilding } from 'react-icons/fa';
 
 function Home({ user }) {
   return (
@@ -19,28 +19,6 @@ function Home({ user }) {
         {/* Quick Actions */}
         <Box w="full" mt={2}>
           <SimpleGrid columns={2} spacing={4} maxW="2xl" mx="auto">
-            <Box
-              bg="white"
-              _dark={{ bg: "gray.800" }}
-              p={8}
-              borderRadius="lg"
-              shadow="md"
-              textAlign="center"
-              transition="all 0.2s"
-              _hover={{ shadow: "lg", transform: "translateY(-2px)" }}
-            >
-              <Icon as={FaFlag} boxSize={8} color="red.500" mb={4} />
-              <Heading size="md" mb={3} color="gray.800" _dark={{ color: "gray.100" }}>
-                Report a Cheater
-              </Heading>
-              <Text color="gray.600" _dark={{ color: "gray.300" }} mb={6}>
-                Submit evidence of suspicious behavior or cheating on Codeforces
-              </Text>
-              <Button colorScheme="red" size="lg" as="a" href="/reportCheaters" w="full">
-                Report Now
-              </Button>
-            </Box>
-
             <Box
               bg="white"
               _dark={{ bg: "gray.800" }}
@@ -78,59 +56,12 @@ function Home({ user }) {
                 Search in Organisation
               </Heading>
               <Text color="gray.600" _dark={{ color: "gray.300" }} mb={6}>
-                Find cheaters within specific organizations or institutions also report cheaters from the organisation.
+                Find cheaters within specific organizations or institutions
               </Text>
               <Button colorScheme="purple" size="lg" as="a" href="/search-org" w="full">
                 Search Organisation
               </Button>
             </Box>
-
-            {/* Fourth box - Admin Panel for admins, Appeal for regular users */}
-            {user ? (
-              <Box
-                bg="white"
-                _dark={{ bg: "gray.800" }}
-                p={8}
-                borderRadius="lg"
-                shadow="md"
-                textAlign="center"
-                transition="all 0.2s"
-                _hover={{ shadow: "lg", transform: "translateY(-2px)" }}
-              >
-                <Icon as={FaShieldAlt} boxSize={8} color="green.500" mb={4} />
-                <Heading size="md" mb={3} color="gray.800" _dark={{ color: "gray.100" }}>
-                  Admin Panel
-                </Heading>
-                <Text color="gray.600" _dark={{ color: "gray.300" }} mb={6}>
-                  Review and manage reported cheaters
-                </Text>
-                <Button colorScheme="green" size="lg" as="a" href="/admin" w="full">
-                  Access Admin Panel
-                </Button>
-              </Box>
-            ) : (
-              <Box
-                bg="white"
-                _dark={{ bg: "gray.800" }}
-                p={8}
-                borderRadius="lg"
-                shadow="md"
-                textAlign="center"
-                transition="all 0.2s"
-                _hover={{ shadow: "lg", transform: "translateY(-2px)" }}
-              >
-                <Icon as={FaShieldAlt} boxSize={8} color="orange.500" mb={4} />
-                <Heading size="md" mb={3} color="gray.800" _dark={{ color: "gray.100" }}>
-                  Appeal a Cheater Mark
-                </Heading>
-                <Text color="gray.600" _dark={{ color: "gray.300" }} mb={6}>
-                  If you believe you were wrongly marked as a cheater, submit an appeal
-                </Text>
-                <Button colorScheme="orange" size="lg" as="a" href="/appeal" w="full">
-                  Appeal
-                </Button>
-              </Box>
-            )}
           </SimpleGrid>
         </Box>
 
