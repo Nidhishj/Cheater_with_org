@@ -9,10 +9,10 @@ function Home({ user }) {
         {/* Hero Section */}
         <VStack spacing={6} mb={4}>
           <Heading size="2xl" color="blue.600" _dark={{ color: "blue.400" }} fontWeight="bold">
-            CF Cheater Database
+            Cheaters with Org
           </Heading>
           <Text fontSize="xl" color="gray.600" _dark={{ color: "gray.300" }} maxW="2xl">
-            Help maintain the integrity of competitive programming by reporting and tracking Codeforces cheaters.
+            Track and discover CF cheaters within organizations.
           </Text>
         </VStack>
 
@@ -66,7 +66,7 @@ function Home({ user }) {
         </Box>
 
         {/* Chrome Extension Notice */}
-        <Box
+        {/* <Box
           w="full"
           maxW="2xl"
           mx="auto"
@@ -81,8 +81,8 @@ function Home({ user }) {
             bg: "blue.800",
             borderColor: "blue.600" 
           }}
-        >
-          <Text fontSize="md" color="blue.900" _dark={{ color: "blue.100" }}>
+        > */}
+          {/* <Text fontSize="md" color="blue.900" _dark={{ color: "blue.100" }}>
             We also provide a <b>Chrome extension</b> for highlighting cheaters directly on Codeforces. <br />
             <a
               href="https://github.com/macaquedev/cf-cheater-highlighter"
@@ -96,16 +96,55 @@ function Home({ user }) {
             >
               Get it here on GitHub
             </a>.
-          </Text>
-        </Box>
+          </Text> */}
+        {/* </Box> */}
 
         {/* Footer Info */}
         <Box textAlign="center" color="gray.500" _dark={{ color: "gray.400" }} fontSize="sm" mt={8}>
           <Text>
-            This database helps maintain fair competition on Codeforces by tracking verified cases of cheating.
+            This database is a effort to maintain fair competition by highlighting the cheaters organisation wise.
           </Text>
-          <Text mt={2}>
+          {/* <Text mt={2}>
             All reports are reviewed by administrators before being added to the database.
+          </Text> */}
+          
+          {/* Credits Section */}
+          <Box mt={6} pt={4} borderTop="1px" borderColor="gray.200" _dark={{ borderColor: "gray.600" }}>
+            <Text mb={2}>
+              To report go to -{" "}
+              <a
+                href="https://cf-cheater-database.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#1a73e8',
+                  textDecoration: 'underline',
+                  fontWeight: '500',
+                }}
+              >
+                https://cf-cheater-database.vercel.app/
+              </a>
+            </Text>
+            <Text mb={4}>
+              Original credits to them
+            </Text>
+          </Box>
+        </Box>
+        
+        {/* Bottom Footer */}
+        <Box 
+          textAlign="center" 
+          color="gray.400" 
+          _dark={{ color: "gray.500" }} 
+          fontSize="xs"
+          mt={8}
+          pt={4}
+          borderTop="1px" 
+          borderColor="gray.200" 
+          _dark={{ borderColor: "gray.600" }}
+        >
+          <Text>
+            Made by Nidhishj with ☕
           </Text>
         </Box>
       </VStack>
