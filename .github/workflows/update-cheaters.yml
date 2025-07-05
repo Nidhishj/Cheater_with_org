@@ -1,0 +1,25 @@
+name: Update cheaters.json
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  update-cheaters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Download cheaters.json
+        run: |
+          curl -o cheaters.json https://raw.githubusercontent.com/macaquedev/cf-cheater-highlighter/main/cheaters.json
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add cheaters.json
+          git diff --staged --quiet || git commit -m "Update cheaters.json from original repository"
+          git push
